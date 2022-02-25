@@ -1,0 +1,61 @@
+ html {
+     font-family: 'Helvetica Neue';
+ }
+ 
+ body {
+     margin: 0;
+ }
+ 
+ header {
+     background: rgb(175, 225, 175);
+     text-align: center;
+     height: max-content;
+     padding: 1em;
+ }
+ 
+ section {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     height: 100vh;
+ }
+ 
+ article {
+     flex: 1;
+     border-width: 1px;
+     border-style: solid;
+     padding: 1em;
+ }
+ 
+ article:nth-child(2) {
+     flex: 2;
+ }
+
+ span {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ #tablero {
+     border-style: solid;
+     border-color: red;
+     display: flex;
+     justify-content: center;
+     grid-template-columns: 2fr 2fr;
+     grid-template-rows: 2fr 2fr;
+     height: 50vh;
+     gap: 5px;
+ }
+ 
+ #tablero div {
+     border-style: solid;
+     margin: 10px;
+     padding: 5px;
+     width: 10vh;
+     height: 10vh;
+     background: lightblue;
+     float: left;
+     border: 3px solid red;
+     text-align: center;
+     line-height: 100px;
+ }
