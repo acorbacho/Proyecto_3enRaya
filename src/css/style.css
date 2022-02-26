@@ -37,10 +37,6 @@
      flex-direction: column;
  }
 
- svg {
-     
- }
-
  #tablero {
      border-style: solid;
      border-color: red;
