@@ -1,5 +1,4 @@
 function main() {
-
     //Variables.
     let contador_casillas = 0
     let casillas = []
@@ -118,5 +117,6 @@ function main() {
         casillas[casilla3].innerHTML = estrella_win
         banner_victoria.innerHTML = texto_victoria
     }
+  }
 }
 main()
