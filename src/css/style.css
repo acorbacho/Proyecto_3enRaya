@@ -39,7 +39,7 @@
  
  #tablero div:hover {
      background: rgb(54, 57, 62);
-
+}
  span div {
      border-style: solid;
      margin: 8%;
