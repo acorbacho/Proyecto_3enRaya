@@ -9,6 +9,7 @@ function main() {
     let vicJ1_HTML = document.getElementById("J1VIC")
     var victorias_J2 = 0
     let vicJ2_HTML = document.getElementById("J2VIC")
+    let boton_refrescar = document.getElementById("refrescar")
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             casillas[contador_casillas] = document.getElementById("f" + i + "c" + j)
@@ -21,6 +22,10 @@ function main() {
             movimiento(casillas[i])
         })
     }
+
+    boton_refrescar.addEventListener('click', refrescarTablero)
+
+
     //Funciones.
     function movimiento(casilla) {
         if (jugador) {
@@ -114,5 +119,14 @@ function main() {
         casillas[casilla3].innerHTML = estrella_win
         banner_victoria.innerHTML = texto_victoria
     }
+
+    function refrescarTablero() {
+        for (let i = 0; i < casillas.length; i++) {
+            (casillas[i].innerHTML = '')
+        }
+
+
+    }
+
 }
 main()
