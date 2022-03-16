@@ -1,15 +1,15 @@
  body {
-    margin: auto;
-    background-color: rgb(225, 200, 240);
+     margin: auto;
+     background-color: rgb(225, 200, 240);
  }
  
  header {
-      background: bisque;
-      text-align: center;
-      padding: 0.5em;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 50px;
-      text-shadow: 1px 1px 3px rgb(109, 189, 255);
+     background: bisque;
+     text-align: center;
+     padding: 0.5em;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size: 50px;
+     text-shadow: 1px 1px 3px rgb(109, 189, 255);
  }
  
  section {
@@ -28,12 +28,11 @@
      margin: 5px;
      border-radius: 10px;
  }
-
  #tablero {
      display: flex;
      justify-content: center;
      align-items: flex-start;
-     width: 65%; 
+     width: 65%;
      gap: 8px;
      flex: 1;
  }
@@ -42,17 +41,19 @@
      background: rgb(54,57,62);
 }
  
-span div {
+ #tablero div:hover {
+     background: rgb(54, 57, 62);
+}
+ span div {
      border-style: solid;
      margin: 8%;
      width: 11vh;
      height: 11vh;
-     background: rgb(121, 164, 255); 
+     background: rgb(121, 164, 255);
      border: 5px solid slateblue;
      line-height: 100px;
      cursor: pointer;
  }
-
 #tablero img {
     height: 100%;
 }
