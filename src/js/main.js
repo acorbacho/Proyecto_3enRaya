@@ -10,26 +10,29 @@ function main() {
     var victorias_J2 = 0
     let vicJ2_HTML = document.getElementById("J2VIC")
     let boton_refrescar = document.getElementById("refrescar")
-    let estado_partida = true
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             casillas[contador_casillas] = document.getElementById("f" + i + "c" + j)
             contador_casillas++
         }
     }
-    //Eventos.
-    if (estado_partida == true) {
+
+    manejadores = []
+    for (let i = 0; i < 9; i++) {
+        manejadores[i] = () => movimiento(casillas[i])
+
+    }
+
+    function addEvent() {
         for (let i = 0; i < 9; i++) {
-            casillas[i].addEventListener('click', () => {
-                movimiento(casillas[i])
-            })
+            casillas[i].addEventListener('click', manejadores[i])
         }
     }
-    if (estado_partida == false) {
+    addEvent()
+
+    function breakEvent() {
         for (let i = 0; i < 9; i++) {
-            casillas[i].removeEventListener('click', () => {
-                movimiento(casillas[i])
-            })
+            casillas[i].removeEventListener('click', manejadores[i])
         }
     }
     boton_refrescar.addEventListener('click', refrescarTablero)
@@ -75,7 +78,6 @@ function main() {
             }
             if (contador_casillas === 9) {
                 salida('Empate')
-                location.reload()
             }
         }
         jugador = !jugador
@@ -88,15 +90,13 @@ function main() {
             texto_victoria = '<svg width="auto"height="100"><circle cx="100"cy="50"r="50"fill="#ffd900"viewBox="0 0 100 100"><animate attributeType="XML"attributeName="cx"from="-1490"to="2320"dur="5s"begin="0s"repeatCount="indefinite"/></circle><text x="10"y="70"style="font:bold 4.2em arial;fill:white;"viewBox="0 0 100 100">J1<animate attributeType="XML"attributeName="x"from="-1525"to="2285"dur="5s"begin="0s"repeatCount="indefinite"/></text><text x="0"y="70"style="font:bold 4.2em arial;fill:black;"viewBox="0 0 100 100">El ganador es<animate attributeType="XML"attributeName="x"from="-2030"to="1800"dur="5s"begin="0s"repeatCount="indefinite"/></text></svg>';
             victorias_J1++
             vicJ1_HTML.innerHTML = victorias_J1
-            estado_partida = false
-            console.log("El estado de la partida dentro de AnimaWin es " + estado_partida)
+            breakEvent();
         } else {
             estrella_win = '<img src="../assets/img/star2.svg">';
             texto_victoria = '<svg width="auto"height="100"><circle cx="100"cy="50"r="50"fill="Blue"viewBox="0 0 100 100"><animate attributeType="XML"attributeName="cx"from="-1490"to="2320"dur="5s"begin="0s"repeatCount="indefinite"/></circle><text x="10"y="70"style="font:bold 4.2em arial;fill:white;"viewBox="0 0 100 100">J2<animate attributeType="XML"attributeName="x"from="-1525"to="2285"dur="5s"begin="0s"repeatCount="indefinite"/></text><text x="0"y="70"style="font:bold 4.2em arial;fill:black;"viewBox="0 0 100 100">El ganador es<animate attributeType="XML"attributeName="x"from="-2030"to="1800"dur="5s"begin="0s"repeatCount="indefinite"/></text></svg>';
             victorias_J2++
             vicJ2_HTML.innerHTML = victorias_J2
-            estado_partida = false
-            console.log("El estado de la partida dentro de AnimaWin es " + estado_partida)
+            breakEvent();
         }
         switch (var_win) {
             case 1:
@@ -131,16 +131,14 @@ function main() {
         casillas[casilla2].innerHTML = estrella_win
         casillas[casilla3].innerHTML = estrella_win
         banner_victoria.innerHTML = texto_victoria
-        console.log("El estado de la partida dentro de estrellas es " + estado_partida)
     }
 
     function refrescarTablero() {
         for (let i = 0; i < casillas.length; i++) {
             (casillas[i].innerHTML = '')
-            estado_partida = true
+            banner_victoria.innerHTML = ''
         }
-        console.log("El estado de la partida dentro de refrescarTablero es " + estado_partida)
-
+        addEvent();
     }
 
 }
