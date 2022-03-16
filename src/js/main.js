@@ -27,7 +27,6 @@ function main() {
     } else {
       casilla.innerHTML = '<img src="../assets/img/nature_space_moon.svg">'
     }
-    jugador = !jugador
     if (casillas[0].innerHTML === casillas[1].innerHTML && casillas[0].innerHTML === casillas[2].innerHTML && casillas[0].innerHTML != '') {
       salida('Win1');
       var_win = 1;
@@ -72,17 +71,18 @@ function main() {
         location.reload()
       }
     }
+    jugador = !jugador
   }
 
   function animaWin(var_win, jugador) {
     let estrella_win
     if (jugador) {
-      estrella_win = '<img src="../assets/img/star2.svg">';
-      texto_victoria = '<svg width="1200" height="100"><g><circle cx="100" cy="50" r="50" fill="#0004ff"><animate attributeType="XML" attributeName="cx" from="-490" to="2320" dur="5s" begin="0s"fill="restore" repeatCount="indefinite"/></animate></circle><text x="10" y="70" style="font: bold 4.2em arial; fill: white;"> J2<animate attributeType="XML" attributeName="x" from="-525" to="2285" dur="5s" begin="0s"fill="restore" repeatCount="indefinite"/></animate></text>    <text x="0" y="70" style="font: bold 4.2em arial; fill: black;"> El ganador es<animate attributeType="XML" attributeName="x" from="-1030" to="1800" dur="5s" begin="0s"fill="restore" repeatCount="indefinite"/></animate></text></g></svg>';
+      estrella_win = '<img src="../assets/img/star1.svg">';
+      texto_victoria = '<svg width="auto"height="100"><circle cx="100"cy="50"r="50"fill="#ffd900"viewBox="0 0 100 100"><animate attributeType="XML"attributeName="cx"from="-1490"to="2320"dur="5s"begin="0s"repeatCount="indefinite"/></circle><text x="10"y="70"style="font:bold 4.2em arial;fill:white;"viewBox="0 0 100 100">J1<animate attributeType="XML"attributeName="x"from="-1525"to="2285"dur="5s"begin="0s"repeatCount="indefinite"/></text><text x="0"y="70"style="font:bold 4.2em arial;fill:black;"viewBox="0 0 100 100">El ganador es<animate attributeType="XML"attributeName="x"from="-2030"to="1800"dur="5s"begin="0s"repeatCount="indefinite"/></text></svg>';
 
     } else {
-      estrella_win = '<img src="../assets/img/star1.svg">';
-      texto_victoria = '<svg width="1200" height="100"><g><circle cx="100" cy="50" r="50" fill="#ffd900"><animate attributeType="XML" attributeName="cx" from="-490" to="2320" dur="5s" begin="0s"fill="restore" repeatCount="indefinite"/></animate></circle><text x="10" y="70" style="font: bold 4.2em arial; fill: white;"> J1<animate attributeType="XML" attributeName="x" from="-525" to="2285" dur="5s" begin="0s"fill="restore" repeatCount="indefinite"/></animate></text>    <text x="0" y="70" style="font: bold 4.2em arial; fill: black;"> El ganador es<animate attributeType="XML" attributeName="x" from="-1030" to="1800" dur="5s" begin="0s"fill="restore" repeatCount="indefinite"/></animate></text></g></svg>';
+      estrella_win = '<img src="../assets/img/star2.svg">';
+      texto_victoria = '<svg width="auto"height="100"><circle cx="100"cy="50"r="50"fill="Blue"viewBox="0 0 100 100"><animate attributeType="XML"attributeName="cx"from="-1490"to="2320"dur="5s"begin="0s"repeatCount="indefinite"/></circle><text x="10"y="70"style="font:bold 4.2em arial;fill:white;"viewBox="0 0 100 100">J2<animate attributeType="XML"attributeName="x"from="-1525"to="2285"dur="5s"begin="0s"repeatCount="indefinite"/></text><text x="0"y="70"style="font:bold 4.2em arial;fill:black;"viewBox="0 0 100 100">El ganador es<animate attributeType="XML"attributeName="x"from="-2030"to="1800"dur="5s"begin="0s"repeatCount="indefinite"/></text></svg>';
     }
     switch (var_win) {
       case 1:
