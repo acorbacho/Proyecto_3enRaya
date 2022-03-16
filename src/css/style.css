@@ -1,0 +1,103 @@
+ body {
+     margin: auto;
+     background-color: rgb(225, 200, 240);
+ }
+ 
+ header {
+     background: bisque;
+     text-align: center;
+     padding: 0.5em;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size: 50px;
+     text-shadow: 1px 1px 3px rgb(109, 189, 255);
+ }
+ 
+ section {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     height: 100vh;
+ }
+ 
+ article {
+     flex: 1;
+     border-width: 1px;
+     border-style: solid;
+     padding: 2em;
+     background-color: bisque;
+     margin: 5px;
+     border-radius: 10px;
+ }
+ #tablero {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     width: 65%;
+     gap: 8px;
+     flex: 1;
+ }
+ 
+ #tablero div:hover {
+     background: rgb(54, 57, 62);
+}
+ span div {
+     border-style: solid;
+     margin: 8%;
+     width: 11vh;
+     height: 11vh;
+     background: rgb(121, 164, 255);
+     border: 5px solid slateblue;
+     line-height: 100px;
+     cursor: pointer;
+ }
+#tablero img {
+    height: 100%;
+}
+
+#instrucciones div:first-child{
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: fantasy;
+    text-shadow: 1px 1px 3px rgb(109, 189, 255);
+    font-size: 22px;
+    margin-bottom: 0.25em;
+    font-size: 150%;
+    border-bottom: 2px solid rgb(94, 94, 94);
+}
+
+#historia div:first-child{
+    text-align: center;
+    margin-bottom: 0.25em;
+    text-decoration: solid;
+    font-family: fantasy;
+    text-shadow: 1px 1px 3px rgb(109, 189, 255);
+    font-size: 150%;
+    border-bottom: 2px solid rgb(94, 94, 94);
+}
+
+#historia div:nth-child(2){
+    text-align: inherit;
+    font-family: Cambria;
+    font-size: 120%;
+}
+
+#instrucciones div:nth-child(2){
+    text-align: inherit;
+    font-family: Cambria;
+    font-size: 120%;
+}
+
+#instrucciones img{
+    max-width: 75%;
+    max-height: 75%;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+#historia img{
+    max-width: 75%;
+    max-height: 75%;
+    margin-left: 15%;
+    margin-top: 10%;
+    border-radius: 2%;
+}

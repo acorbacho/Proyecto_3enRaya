@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <svg width="1200" height="100">
+            <g>
+            <circle cx="100" cy="50" r="50" fill="#ffd900">
+               <animate attributeType="XML" attributeName="cx" 
+                  from="-490" to="2320" dur="5s" begin="0s"
+                  fill="restore" repeatCount="indefinite"/>
+                  </animate>
+                  </circle>       
+            <text x="10" y="70" style="font: bold 4.2em arial; fill: white;"> J1
+               <animate attributeType="XML" attributeName="x" 
+                  from="-525" to="2285" dur="5s" begin="0s"
+                  fill="restore" repeatCount="indefinite"/>
+                  </animate>
+                </text>    
+                <text x="0" y="70" style="font: bold 4.2em arial; fill: black;"> El ganador es
+               <animate attributeType="XML" attributeName="x" 
+                  from="-1030" to="1800" dur="5s" begin="0s"
+                  fill="restore" repeatCount="indefinite"/>
+                  </animate>
+                </text>       
+            </g>
+            </svg>
+
