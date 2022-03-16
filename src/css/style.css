@@ -104,3 +104,20 @@
      margin-top: 10%;
      border-radius: 2%;
  }
+ 
+ #recuento div:first-child {
+     text-align: center;
+     margin-bottom: 1em;
+     font-family: fantasy;
+     text-shadow: 1px 1px 3px rgb(109, 189, 255);
+     font-size: 22px;
+     margin-bottom: 0.25em;
+     font-size: 150%;
+     border-bottom: 2px solid rgb(94, 94, 94);
+ }
+ 
+ #recuento div:nth-child(2) {
+     text-align: inherit;
+     font-family: Cambria;
+     font-size: 120%;
+ }
