@@ -16,13 +16,25 @@ function main() {
             contador_casillas++
         }
     }
-    //Eventos.
+
+    manejadores = []
     for (let i = 0; i < 9; i++) {
-        casillas[i].addEventListener('click', () => {
-            movimiento(casillas[i])
-        })
+        manejadores[i] = () => movimiento(casillas[i])
+
     }
 
+    function addEvent() {
+        for (let i = 0; i < 9; i++) {
+            casillas[i].addEventListener('click', manejadores[i])
+        }
+    }
+    addEvent()
+
+    function breakEvent() {
+        for (let i = 0; i < 9; i++) {
+            casillas[i].removeEventListener('click', manejadores[i])
+        }
+    }
     boton_refrescar.addEventListener('click', refrescarTablero)
 
 
@@ -66,7 +78,6 @@ function main() {
             }
             if (contador_casillas === 9) {
                 salida('Empate')
-                location.reload()
             }
         }
         jugador = !jugador
@@ -79,11 +90,13 @@ function main() {
             texto_victoria = '<svg width="auto"height="100"><circle cx="100"cy="50"r="50"fill="#ffd900"viewBox="0 0 100 100"><animate attributeType="XML"attributeName="cx"from="-1490"to="2320"dur="5s"begin="0s"repeatCount="indefinite"/></circle><text x="10"y="70"style="font:bold 4.2em arial;fill:white;"viewBox="0 0 100 100">J1<animate attributeType="XML"attributeName="x"from="-1525"to="2285"dur="5s"begin="0s"repeatCount="indefinite"/></text><text x="0"y="70"style="font:bold 4.2em arial;fill:black;"viewBox="0 0 100 100">El ganador es<animate attributeType="XML"attributeName="x"from="-2030"to="1800"dur="5s"begin="0s"repeatCount="indefinite"/></text></svg>';
             victorias_J1++
             vicJ1_HTML.innerHTML = victorias_J1
+            breakEvent();
         } else {
             estrella_win = '<img src="../assets/img/star2.svg">';
             texto_victoria = '<svg width="auto"height="100"><circle cx="100"cy="50"r="50"fill="Blue"viewBox="0 0 100 100"><animate attributeType="XML"attributeName="cx"from="-1490"to="2320"dur="5s"begin="0s"repeatCount="indefinite"/></circle><text x="10"y="70"style="font:bold 4.2em arial;fill:white;"viewBox="0 0 100 100">J2<animate attributeType="XML"attributeName="x"from="-1525"to="2285"dur="5s"begin="0s"repeatCount="indefinite"/></text><text x="0"y="70"style="font:bold 4.2em arial;fill:black;"viewBox="0 0 100 100">El ganador es<animate attributeType="XML"attributeName="x"from="-2030"to="1800"dur="5s"begin="0s"repeatCount="indefinite"/></text></svg>';
             victorias_J2++
             vicJ2_HTML.innerHTML = victorias_J2
+            breakEvent();
         }
         switch (var_win) {
             case 1:
@@ -123,9 +136,9 @@ function main() {
     function refrescarTablero() {
         for (let i = 0; i < casillas.length; i++) {
             (casillas[i].innerHTML = '')
+            banner_victoria.innerHTML = ''
         }
-
-
+        addEvent();
     }
 
 }
